@@ -96,13 +96,23 @@ buttons.forEach(function (button) {
         displaySelections(userSelection, computerSelection);
         displayRandom(random);
 
+// añadir atributo disabled
+
+const btnHead = document.querySelector("#heads");
+const btnTails = document.querySelector("#tails");
+
+btnHead.disabled = true;
+btnTails.disabled = true;
 
 
-        //Adds the score of the player and computer
+        setTimeout(function(){
+            //Adds the score of the player and computer
         tallyScore(random, userPick, computerPick);
         //resets animations
         document.querySelector('#image').classList.remove('animate');
-
-    })
+        btnHead.disabled = false;
+        btnTails.disabled = false;
+    }, 2000);
+        });
 })
 
